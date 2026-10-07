@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>五子棋 · Gomoku（网页版）</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="head">
+    <h1>五 子 棋</h1>
+    <p class="sub">GOMOKU · 连珠 <span id="engine" class="engine"></span></p>
+  </header>
+
+  <main>
+    <canvas id="board" width="628" height="628"></canvas>
+
+    <section class="controls">
+      <div class="group" data-name="mode">
+        <span class="label">模式</span>
+        <label><input type="radio" name="mode" value="pve" checked>人机</label>
+        <label><input type="radio" name="mode" value="pvp">双人</label>
+      </div>
+      <div class="group" data-name="difficulty">
+        <span class="label">难度</span>
+        <label><input type="radio" name="difficulty" value="easy">简单</label>
+        <label><input type="radio" name="difficulty" value="medium" checked>中等</label>
+        <label><input type="radio" name="difficulty" value="hard">困难</label>
+      </div>
+      <div class="group" data-name="humanColor">
+        <span class="label">执子</span>
+        <label><input type="radio" name="humanColor" value="black" checked>黑·先</label>
+        <label><input type="radio" name="humanColor" value="white">白·后</label>
+      </div>
+    </section>
+
+    <section class="buttons">
+      <button id="undo">↩ 悔棋</button>
+      <button id="restart" class="primary">重新开始</button>
+      <button id="sound">🔊 音效：开</button>
+    </section>
+
+    <p id="status" class="status">连接后台中…</p>
+    <p class="hint">后台：<code id="apiBase"></code></p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

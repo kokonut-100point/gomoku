@@ -1,0 +1,104 @@
+:root {
+  --bg: #131831;
+  --panel: #1e2547;
+  --wood-outer: #b98a4a;
+  --wood: #e5b877;
+  --wood-dark: #d3a15f;
+  --grid: #5c3a14;
+  --text: #eef1fb;
+  --muted: #aab2d4;
+  --accent: #6ee7b7;
+  --gold: #fbbf24;
+  --red: #f87171;
+  --btn: #3b4380;
+  --btn-ok: #0ea371;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 18px 12px 36px;
+  background: radial-gradient(circle at 50% 0%, #1b2145 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.head { text-align: center; margin-bottom: 10px; }
+h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 8px;
+  color: var(--gold);
+  text-shadow: 0 2px 12px rgba(251, 191, 36, .28);
+}
+.sub { margin: 4px 0 0; font-size: 12px; color: var(--muted); letter-spacing: 3px; }
+.engine { color: var(--accent); letter-spacing: 0; }
+
+canvas {
+  border-radius: 10px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, .45);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.controls, .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 14px;
+}
+.buttons { gap: 12px; margin-top: 12px; }
+
+.group { display: flex; align-items: center; gap: 6px; }
+.group .label { color: var(--muted); font-size: 13px; }
+.group label {
+  font-size: 13px;
+  color: var(--text);
+  background: var(--panel);
+  padding: 5px 9px;
+  border-radius: 7px;
+  cursor: pointer;
+  user-select: none;
+  transition: background .15s;
+}
+.group label:has(input:checked) { background: var(--btn); box-shadow: inset 0 0 0 1px #5c67b8; }
+.group input { display: none; }
+
+button {
+  font-family: inherit;
+  font-size: 13px;
+  padding: 7px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--btn);
+  color: var(--text);
+  cursor: pointer;
+  transition: filter .15s;
+}
+button:hover { filter: brightness(1.15); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button.primary { background: var(--btn-ok); color: #04211a; font-weight: 700; }
+
+.status {
+  margin: 14px 0 0;
+  font-size: 15px;
+  font-weight: 700;
+  min-height: 22px;
+  text-align: center;
+}
+.status.error { color: var(--red); }
+.status.think { color: var(--gold); }
+
+.hint { margin: 8px 0 0; font-size: 11px; color: var(--muted); }
+code { color: var(--accent); }
+
+@media (max-width: 680px) {
+  canvas { width: min(92vw, 628px); height: auto; }
+  h1 { font-size: 24px; }
+}

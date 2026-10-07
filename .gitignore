@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# 本地解释器配置（各人机器不同，不进仓库）
+.python-path
+.python-path.bak
+
+# 运行时产物
+.gomoku-sounds/
+.gomoku-server.log
+.gomoku-server.log.*
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
